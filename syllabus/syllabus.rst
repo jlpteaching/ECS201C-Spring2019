@@ -20,13 +20,9 @@ Please contact me (in person or electronically) or submit anonymous feedback if 
 
 Furthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities (including race, gender, class, sexuality, religion, ability, etc.).
 To help accomplish this:
+
 * If you have a name and/or set of pronouns that differ from those that appear in your official records, please let me know!
-* If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me.
-I want to be a resource for you.
-Remember that you can also submit anonymous feedback (which will lead to me making a general announcement to the class, if necessary to address your concerns).
-If you prefer to speak with someone outside of the course, the ... is an excellent resource.
-* I (like many people) am still in the process of learning about diverse perspectives and identities.
-If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
-(Again, anonymous feedback is always an option.)
+* If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. Remember that you can also submit anonymous feedback (which will lead to me making a general announcement to the class, if necessary to address your concerns). If you prefer to speak with someone outside of the course, the ... is an excellent resource.
+* I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it. (Again, anonymous feedback is always an option.)
 
 As a participant in course discussions, you should also strive to honor the diversity of your classmates.
