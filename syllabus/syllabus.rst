@@ -7,6 +7,30 @@ ECS 201C - Parallel architecture and programming
 **NOTE: This is all subject to change.
 I'm creating this now so I have a reference next year.**
 
+Assignments
+-----------
+
+Labs
+~~~~
+
+This will be a lab-based class.
+
+Paper reviews
+~~~~~~~~~~~~~
+Reviews are due at 9am on their due date to give me enough time to read through them before class.
+Each review should have three short paragraphs as described below.
+The final point is key and best enables your review to stand out.
+
+- The first paragraph should be a short summary of the problem the paper attacks and methods used (if any),
+- The second paragraph should be a short summary of the paper's results or key implications,
+- The final paragrph should contain your opinion about what's good and bad about the paper, or a topic/question for lecture
+
+Reviews are graded on the following scale:
+
+- **1**: Review does not demonstrate that you read the paper (e.g., uses sentences copied from the paper).
+- **2**: Review includes a complete summary of the paper and includes all three components listed above.
+- **3**: The review provides insight beyond the contents of the paper and/or brings in ideas from other reading. I expect only a few reviews will get a 3 each week.
+
 Diversity and Inclusion Statement
 ---------------------------------
 In an ideal world, science would be objective.
