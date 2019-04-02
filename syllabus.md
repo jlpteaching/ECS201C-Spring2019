@@ -62,6 +62,27 @@ You can learn more about the broad range of confidential mental health services 
 
 You can also contact me during office hours, via email, or by making a separate office hour appointment: [jlowepower@ucdavis.edu](mailto:jlowepower@ucdavis.edu).
 
+## Diversity and Inclusion Statement
+
+In an ideal world, science would be objective.
+However, much of science is subjective and is historically built on a small subset of privileged voices.
+In this class, we will make an effort to read papers from a diverse group of scientists, but limits still exist on this diversity.
+I acknowledge that it is possible that there may be both overt and covert biases in the material due to the lens with which it was written, even though the material is primarily of a scientific nature.
+Integrating a diverse set of experiences is important for a more comprehensive understanding of science.
+I would like to discuss issues of diversity in computer science as part of the course from time to time.
+
+Please contact me (in person or electronically) or submit anonymous feedback if you have any suggestions to improve the quality of the course materials.
+You can send anonymous feedback by filling out [this Google form]() (you do not have to be logged in and your email address *is not saved*).
+
+Furthermore, I would like to create a learning environment for my students that supports a diversity of thoughts, perspectives and experiences, and honors your identities (including race, gender, class, sexuality, religion, ability, etc.).
+To help accomplish this:
+
+* If you have a name and/or set of pronouns that differ from those that appear in your official records, please let me know.
+* If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. You can also submit anonymous feedback (which will lead to me making a general announcement to the class, if necessary, to address your concerns). If you prefer to speak with someone outside of the course, see [Student support](#student-support) above.
+* I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it. (Anonymous feedback is always an option.)
+
+As a participant in course discussions, you should also strive to honor the diversity of your classmates.
+
 ## Online discussions
 
 Fill this in.
@@ -91,24 +112,24 @@ Links to the assignments will be available as they are prepared.
 
 ### Paper reviews
 
-Each class you will be assigned a paper to review (it may be two papers in rare cases).
-Your review should have the following rough outline:
+Each review should have three short paragraphs as described below.
+The final point is key and best enables your review to stand out.
 
-- a short summary of the problem the paper attacks and methods used (if any),
-- a short summary of the paper's results or key implications,
-- your opinion about what's good and bad about the paper, and
-- a topic/question for lecture
+- The first paragraph should be a short summary of the problem the paper attacks and methods used (if any),
+- The second paragraph should be a short summary of the paper's results or key implications,
+- The final paragraph should contain your opinion about what's good and bad about the paper, or a topic/question for lecture
 
 Reviews will be graded with the following rubric:
 
 |   |                                                                                 |
 |---|---------------------------------------------------------------------------------|
-| 2 | Appropriate summary which clearly demonstrates an in-depth reading of the paper |
-| 1 | Simple summary of the paper                                                     |
-| 0 | Did not turn in the review                                                      |
+| 2 | Review includes a complete summary of the paper and includes all three components listed above. |
+| 1 | Review does not demonstrate that you read the paper (e.g., uses sentences copied from the paper). |
+| 0 | Did not turn in the review.                                                      |
 
 In rare cases for an exemplary review you can be awarded 3 points.
 These "extra credit" points are meant to offset cases of 1's and 0's.
+To recieve a 3, the review must provide insight beyond the contents of the paper and/or brings in ideas from other reading.
 
 I suggest you create reading groups to discuss the paper between yourselves before writing your reviews.
 However, *your review should be completed individually*.
