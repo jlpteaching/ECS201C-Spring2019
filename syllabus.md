@@ -36,7 +36,7 @@ Ayaz will be the main point of contact for all assignment related questions and 
 ### Accommodations
 
 The exam schedule is available on the [schedule](schedule.csv).
-Per [official UC Davis policy](http://catalog.ucdavis.edu/academicinfo/exams.html), if you have an accommodation request from the [Student Disability Center](https://sdc.ucdavis.edu/), or have any conflicts with exam times for religious observances, you must notify me **by the fourth class, January 14, 2018**.
+Per [official UC Davis policy](http://catalog.ucdavis.edu/academicinfo/exams.html), if you have an accommodation request from the [Student Disability Center](https://sdc.ucdavis.edu/), or have any conflicts with exam times for religious observances, you must notify me **by the fourth class, April 11, 2019**.
 
 For each test, quiz, etc. you must reach out to me *one week in advance* to schedule specific accommodations for that test, quiz, etc.
 
