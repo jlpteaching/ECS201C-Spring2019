@@ -2,7 +2,8 @@
 title: "ECS201C: Parallel Architectures. Spring 2019"
 ---
 
-# ECS201C: Parallel Architectures. Spring 2019
+# ECS 201C: Parallel Architectures
+*Spring 2019*
 
 The goal of this course is to become a better programmer by understanding the underlying system architecture and to get a better understanding of the underlying system architecture by programming the system.
 This will be a programming-heavy course with about one programming assignment per week (fewer later in the quarter).
