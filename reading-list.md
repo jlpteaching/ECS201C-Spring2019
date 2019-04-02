@@ -17,12 +17,11 @@ No reading for the first lecture
 ## 4/4 Lecture 2: Performance
 
 **Review:** [Gables: A Roofline Model for Mobile SoCs](http://research.cs.wisc.edu/multifacet/papers/hpca19_gables.pdf). Mark D. Hill and Vijay Reddi. HPCA. 2019.
-
 Webpage with interactive plots: http://research.cs.wisc.edu/multifacet/gables/
 
-*Reference:* SPLASH-2: [The SPLASH-2 programs: characterization and methodological considerations](https://dl.acm.org/citation.cfm?id=223990). Steven Cameron Woo, Moriyoshi Ohara, Evan Torrie, Jaswinder Pal Singh, and Anoop Gupta. 1995.
+**Reference:** SPLASH-2: [The SPLASH-2 programs: characterization and methodological considerations](https://dl.acm.org/citation.cfm?id=223990). Steven Cameron Woo, Moriyoshi Ohara, Evan Torrie, Jaswinder Pal Singh, and Anoop Gupta. 1995.
 
-*Reference:* PARSEC benchmarks: [Benchmarking Modern Multiprocessors](https://parsec.cs.princeton.edu/publications/bienia11benchmarking.pdf). Christian Bienia. Ph.D. Thesis. Princeton University, January 2011.
+**Reference:** PARSEC benchmarks: [Benchmarking Modern Multiprocessors](https://parsec.cs.princeton.edu/publications/bienia11benchmarking.pdf). Christian Bienia. Ph.D. Thesis. Princeton University, January 2011.
 
 ## 4/9 Lecture 3: Parallelism introduction
 
