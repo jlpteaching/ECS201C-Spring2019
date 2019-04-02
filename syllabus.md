@@ -139,3 +139,33 @@ Reviews are due at 7am via Canvas.
 ### Projects
 
 More info on projects coming soon.
+
+## Schedule
+
+The following is a *preliminary* schedule.
+Dates may change throughout the quarter.
+
+|        |                                 |                                                           |
+|--------|---------------------------------|-----------------------------------------------------------|
+| 2-Apr  | Intro                           |                                                           |
+| 4-Apr  | Performance                     |                                                           |
+| 9-Apr  | Types of parallelism            |                                                           |
+| 11-Apr | Single Core (201A refresher)    | MIMD assignment 1 out                                     |
+| 16-Apr | Parallel CPU architecture intro |                                                           |
+| 18-Apr | Memory consistency              | MIMD assignment due (OMP)                                 |
+| 23-Apr | Cache coherence                 |                                                           |
+| 25-Apr | Cache coherence                 | MIMD assignment 2 due (C++ threads / locking / lock free) |
+| 30-Apr | Distributed computing           |                                                           |
+| 2-May  | Distributed computing           | Hadoop assignment due                                     |
+| 7-May  | Proposal meetings               | Proposals due                                             |
+| 9-May  | GPUs                            |                                                           |
+| 14-May | GPUs                            | GPU assignment due                                        |
+| 16-May | Accelerator intro               |                                                           |
+| 21-May | Dataflow accelerators           |                                                           |
+| 23-May | Machine learning accelerators   | Tensorflow assignment due                                 |
+| 28-May | Project meetings                | Project status report due                                 |
+| 30-May | Quantum computing               |                                                           |
+| 4-Jun  | Persistent memory               | Quantum assignment due                                    |
+| 6-Jun  | FPGAs                           |                                                           |
+| 7-Jun  | Class conference?               |                                                           |
+| 13-Jun |                                 | Final reports due                                         |
