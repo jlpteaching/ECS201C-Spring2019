@@ -10,6 +10,11 @@ Usually, there will be one paper to read *and review*, and there may be other pa
 You can access these papers either when you are on campus or by setting up a proxy to use the campus network. [The library has directions on setting up a proxy.](https://www.library.ucdavis.edu/service/connect-from-off-campus/)
 If this doesn't work for you post on the online forum and someone can upload a pdf.
 
+## Writing reviews
+
+You only need to turn in a review for the paper marked **Review** below.
+You can find details on how to write a review [on the syllabus](syllabus.md#paper-reviews).
+
 ## Lecture 1: 4/2
 
 No reading for the first lecture
