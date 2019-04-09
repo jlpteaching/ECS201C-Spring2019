@@ -6,7 +6,7 @@ Filelist for the assignment:
   - [Intel's Closing the Ninja Gap paper](https://www.intel.com/content/dam/www/public/us/en/documents/technology-briefs/intel-labs-closing-ninja-gap-paper.pdf)
   - [Dan Gibson's OpenMP intro](http://pages.cs.wisc.edu/~gibson/filelib/openmp.ppt)
   - [Dan Gibson's OpenMP examples](http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016//handouts/homeworks/ompdemo.tar.gz)
-  - [Template files](/template)
+  - [Template files](template)
 
 
 The purpose of the assignment is to give you experience writing simple shared memory programs using OpenMP.
@@ -68,7 +68,7 @@ Do revert them back to allow compiler optimizations.
 **NOTE:** You are free to not use the template.
 But do keep the initialization section the same, so that you have a 32-bit random number.
 
-Download the template from: [here](/template)
+Download the template from: [here](template)
 
 
 ## Problem 1: Write Sequential Ocean (10 points)
