@@ -6,7 +6,7 @@ Filelist for the assignment:
   - [Intel's Closing the Ninja Gap paper](https://www.intel.com/content/dam/www/public/us/en/documents/technology-briefs/intel-labs-closing-ninja-gap-paper.pdf)
   - [Dan Gibson's OpenMP intro](http://pages.cs.wisc.edu/~gibson/filelib/openmp.ppt)
   - [Dan Gibson's OpenMP examples](http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016//handouts/homeworks/ompdemo.tar.gz)
-  - Template files
+  - [Template files](/template)
 
 
 The purpose of the assignment is to give you experience writing simple shared memory programs using OpenMP.
@@ -65,10 +65,10 @@ A makefile has also been added to the template that will help you in compiling t
 You might need to change the flags in the makefile during debug phase.
 Do revert them back to allow compiler optimizations. 
 
-NOTE: You are free to not use the template.
+**NOTE:** You are free to not use the template.
 But do keep the initialization section the same, so that you have a 32-bit random number.
 
-Download the template from: [here]()
+Download the template from: [here](/template)
 
 
 ## Problem 1: Write Sequential Ocean (10 points)
@@ -145,6 +145,3 @@ Your answers to the questions and explanation for your results is what is import
    - Run your programs multiple times to get accurate time measurements. This will help avoid incorrect results due to interference with other user's programs.
    - While making your measurements do take care that no-one else is running his/her program on the machine. Otherwise, it will provide you as well as the other person wrong results as well as longer runtimes.
    - Do not wait until the last day to run the experiments. You might not get time on the machine to get good results. Hint: The best time to run your experiments is 12-6am??? 
-  
-
-
