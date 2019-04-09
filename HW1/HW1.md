@@ -45,8 +45,8 @@ Because 6 depends on 10 and 10 depends on 6, the resulting values for 6 and 10 w
 
 
 <p float="left">
-  <img src="/hw1-fig1.jpg" title="Fig 1" alt="cacda" hspace="100" />
-  <img src="/hw1-fig2.jpg" title="Fig 2" /> 
+  <img src="hw1-fig1.jpg" title="Fig 1" hspace="100" />
+  <img src="hw1-fig2.jpg" title="Fig 2" /> 
 </p>
 
 The grid points in the ocean grid can be separated into two independent subsets shown in red and black in the right figure above.
