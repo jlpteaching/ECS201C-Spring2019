@@ -4,9 +4,9 @@
 
 # Homework 1
 
-Note: This homework is a modified version of an assignment from (CS 758 at University of Wisconsin-Madison)[http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016/wiki/index.php?n=Main.Homework1].
+Note: This homework is a modified version of an assignment from [CS 758 at University of Wisconsin-Madison](http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016/wiki/index.php?n=Main.Homework1).
 
-Filelist for the assignment:
+Useful links:
 
   - [SPLASH-2 paper](https://dl.acm.org/citation.cfm?id=223990)
   - [Intel's Closing the Ninja Gap paper](https://www.intel.com/content/dam/www/public/us/en/documents/technology-briefs/intel-labs-closing-ninja-gap-paper.pdf)
@@ -15,8 +15,23 @@ Filelist for the assignment:
 The purpose of the assignment is to give you experience writing simple shared memory programs using OpenMP.
 This exercise is intended to provide a gentle introduction to parallel programming and will provide a foundation for writing and/or running much more complex programs on various parallel programming environments.
 
-You are supposed to use the amarillo machine to get your code workign for the final speedups and other results.
-Your accounts are already setup on the machine and you will be launching your jobs on amarillo using a job queueing system (TODO: Add qsub instructions).
+You are supposed to use the amarillo machine to get your code working for the final speedups and other results.
+Your accounts are already setup on the machine.
+You can ssh with your kerberos user ID and password.
+Let Ayaz know via email or teams if you do not have an account.
+
+**Important: When using amarillo, be sure to consider other users.**
+
+1. This is a research machine used by students in the DArchR research group and beyond.
+2. Other people in the class may be conducting experiments.
+
+Follow these simple guidelines:
+
+- Before running an experiment, check to see if anyone else is running an experiment with `top`. If you see a version of `ocean` running, wait a few minutes.
+- Don't let your tests run for too long. Most tests should finish in < 1 minute and all tests should finish in < 5 minutes.
+- If you see `gem5` processes running for a long period of time, let Jason know via Teams. We'll ask the current amarillo users to hold off on executing and long-running jobs.
+
+Any questions about amarillo should be posted on the Teams portal.
 
 ## OpenMP
 
@@ -25,7 +40,6 @@ It consists of preprocessor (compiler) directives, library routines and environm
 For this assignment, you will use the GNU implementation of OpenMP that is already installed on amarillo.
 You can find a good [introduction to OMP from LLNL](https://computing.llnl.gov/tutorials/openMP/) which explains both the basic concepts and complex use cases.
 Remember to 
-  - Include omp.h in all the source files that use OpenMP directives or library calls.
   - Use the flag -fopenmp for compilation and linking of your source files.
 
 ## Programming Task: Ocean Simulation
@@ -58,18 +72,16 @@ Thus, Ocean will converge (given sufficient runtime) to a gradient of the water 
 ## Template for your convenience for HW1
 
 A [template](code) is provided for your convenience with basic setup of the program.
-This template provides you the initialized data structure to work with.
-The timing instrumentation is also provided.
-You are free to move the timing instrumentation in case you parallelize the initialization phase.
+This template provides you the initialized data structure and timing instrumentation.
+You are free to move the timing instrumentation in case you parallelize the initialization phase (not required).
 A makefile has also been added to the template that will help you in compiling the code.
 You might need to change the flags in the makefile during debug phase.
-Do revert them back to allow compiler optimizations. 
+Do revert them back to allow compiler optimizations before submission.
 
 **NOTE:** You are free to not use the template.
 But do keep the initialization section the same, so that you have a 32-bit random number.
 
-Download the template from: [here](code)
-
+Download the template from [here](code) or clone this repository.
 
 ## Problem 1: Write Sequential Ocean (10 points)
 
@@ -105,7 +117,12 @@ For simplicity, you may assume that the dimensions of the grid are powers of two
 
 Modify your programs to measure the execution time of the parallel phase of execution.
 
-Compare the performance of your two Ocean implementations for a fixed number of time steps (100). Plot the normalized (versus the sequential version of Ocean) speedups of your implementations on `N=[1,2,4,8,16,24,48,96]` threads for a 8194x8194 ocean. Note that the N=1 case should be the sequential version of Ocean, not the parallel version using only 1 thread. Repeat for an ocean sized to 16386x16386. 
+Compare the performance of your two Ocean implementations for a fixed number of time steps (100).
+Plot the normalized (versus the sequential version of Ocean) speedups of your implementations on `N=[1,2,4,8,16,24,48,96]` threads for a 8194x8194 ocean.
+Note that the N=1 case should be the sequential version of Ocean, not the parallel version using only 1 thread.
+Repeat for an ocean sized to 16386x16386. 
+(Note: Runtime for sequential should be less than 5 minutes.
+If your runtime is longer than that, you may have a bug.)
 
 ## Problem 4: Parallelization using static partitioning of the grid (15 points)
 
@@ -122,6 +139,8 @@ Present arguments on why you think this is the case. Vary the chunk size for sta
 After writing the serial and parallel versions of ocean, write another, optimized_ocean, which contains some architecture focused optimization.
 Examples of this include, blocking the algorithm temporally or spatially to take advantage of caches, optimizing for special execution units like SIMD/SSE, and optimizing data layout for memory bandwidth.
 [Closing the Ninja Gap](https://www.intel.com/content/dam/www/public/us/en/documents/technology-briefs/intel-labs-closing-ninja-gap-paper.pdf), an intel paper, describes these examples applied to many different algorithms and may help you get started.
+Of course, amarillo is an AMD platform, so the optimizations may be a little different from the Intel paper above.
+The AMD system supports AVX2 instructions, but it does not support AVX 512.
 
 After implementing optimized_ocean, briefly (2 to 4 sentences) describe your optimization and how you applied it to ocean.
 Plot the speedups obtained with your new optimization over sequential ocean for the same conditions as in Problem 3.
@@ -130,7 +149,7 @@ Also include the overall "best" speedup obtained of your most optimized version 
 
 **Note:** We do not expect you to get 2x, or even 1.5x speedup here.
 In fact, getting no speedup at all is a perfectly fine result.
-Your answers to the questions and explanation for your results is what is important. 
+Your answers to the questions and explanation for your results are what is important. 
 
 ## What to Hand In:
 
@@ -139,7 +158,7 @@ Your answers to the questions and explanation for your results is what is import
  - A gzipped tarball (e.g., `code.tgz`) with the code you used to answer the questions.
 
 **You are expected to complete the assignment individually.**
-However, you may discuss your solutions, your results, OMP best practices, etc. with one another.
+However, you may discuss your solutions, your results (at a high level, not in detail), OMP best practices, etc. with one another.
 **The code and answers to the questions must be completed individually.**
 Feel free to use the class [Teams team](https://teams.microsoft.com/l/team/19%3ad6420d6da2ef421fb15ba63709562467%40thread.skype/conversations?groupId=077efc54-af37-496e-9405-8c7783fa2d3e&tenantId=a8046f64-66c0-4f00-9046-c8daf92ff62b) to discuss as well.
   
@@ -147,6 +166,6 @@ Feel free to use the class [Teams team](https://teams.microsoft.com/l/team/19%3a
   
    - Start early.
    - Amarillo is a dual-socket AMD Epyc server. It has two [AMD 7451](https://www.amd.com/en/products/cpu/amd-epyc-7451) processors with 24 cores per socket (48 total) and each is dual-threaded running at 2.3 GHz (3.2 GHz boost).
-   - Run your programs multiple times to get accurate time measurements. This will help avoid incorrect results due to interference with other user's programs.
+   - Run your programs multiple times (two or three times will do for the long running tests) to get accurate time measurements. This will help avoid incorrect results due to interference with other user's programs.
    - While making your measurements do take care that no-one else is running their program on the machine. Otherwise, it will provide you as well as the other person wrong results as well as longer runtimes.
    - Do not wait until the last day to run the experiments. You might not get time on the machine to get good results. 
