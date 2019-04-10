@@ -1,13 +1,16 @@
+---
+
+---
+
 # Homework 1
+
+Note: This homework is a modified version of an assignment from (CS 758 at University of Wisconsin-Madison)[http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016/wiki/index.php?n=Main.Homework1].
 
 Filelist for the assignment:
 
   - [SPLASH-2 paper](https://dl.acm.org/citation.cfm?id=223990)
   - [Intel's Closing the Ninja Gap paper](https://www.intel.com/content/dam/www/public/us/en/documents/technology-briefs/intel-labs-closing-ninja-gap-paper.pdf)
-  - [Dan Gibson's OpenMP intro](http://pages.cs.wisc.edu/~gibson/filelib/openmp.ppt)
-  - [Dan Gibson's OpenMP examples](http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016//handouts/homeworks/ompdemo.tar.gz)
-  - [Template files](template)
-
+  - [LLNL OMP Documentation](https://computing.llnl.gov/tutorials/openMP/)
 
 The purpose of the assignment is to give you experience writing simple shared memory programs using OpenMP.
 This exercise is intended to provide a gentle introduction to parallel programming and will provide a foundation for writing and/or running much more complex programs on various parallel programming environments.
@@ -20,9 +23,7 @@ Your accounts are already setup on the machine and you will be launching your jo
 OpenMP is an API for shared-memory parallel programming for C/C++ and Fortran.
 It consists of preprocessor (compiler) directives, library routines and environment variables that determine the parallel execution of a program.
 For this assignment, you will use the GNU implementation of OpenMP that is already installed on amarillo.
-A set of sample OpenMP programs are available [here](http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016//handouts/homeworks/ompdemo.tar.gz).
-A presentation on using OpenMP by Dan Gibson is available [here](http://pages.cs.wisc.edu/~gibson/filelib/openmp.ppt).
-It is strongly recommended that you download and run them to get a hands-on experience of compiling, linking and running OpenMP programs.
+You can find a good [introduction to OMP from LLNL](https://computing.llnl.gov/tutorials/openMP/) which explains both the basic concepts and complex use cases.
 Remember to 
   - Include omp.h in all the source files that use OpenMP directives or library calls.
   - Use the flag -fopenmp for compilation and linking of your source files.
@@ -43,7 +44,6 @@ As illustrated in left figure below, value calculations for two adjacent grid lo
 Specifically, the value of the grid location number 6 is calculated using the values of the grid locations 6, 2, 7, 10, and 5, and the value of the grid location number 10 is calculated using the values of the grid locations 10, 6, 11, 14, and 9.
 Because 6 depends on 10 and 10 depends on 6, the resulting values for 6 and 10 will depend on the order in which the values for 6 and 10 were calculated.
 
-
 <p float="left">
   <img src="hw1-fig1.jpg" title="Fig 1" hspace="100" />
   <img src="hw1-fig2.jpg" title="Fig 2" /> 
@@ -57,7 +57,7 @@ Thus, Ocean will converge (given sufficient runtime) to a gradient of the water 
 
 ## Template for your convenience for HW1
 
-A template is provided for your convenience with basic setup of the program.
+A [template](code) is provided for your convenience with basic setup of the program.
 This template provides you the initialized data structure to work with.
 The timing instrumentation is also provided.
 You are free to move the timing instrumentation in case you parallelize the initialization phase.
@@ -68,7 +68,7 @@ Do revert them back to allow compiler optimizations.
 **NOTE:** You are free to not use the template.
 But do keep the initialization section the same, so that you have a 32-bit random number.
 
-Download the template from: [here](template)
+Download the template from: [here](code)
 
 
 ## Problem 1: Write Sequential Ocean (10 points)
@@ -92,20 +92,20 @@ This will cause loop iterations to be dynamically allocated to threads.
 Please be sure to explicitly label all appropriate variables as either shared or private.
 Make an argument for the correctness of your implementation (it is acceptable to use the same argument as problem 1, provided it is still applicable).
 
-The number of threads will be passed to the program based on an environment variable (OMP\_NUM\_THREADS).
+The number of threads will be passed to the program based on an environment variable (`OMP_NUM_THREADS`).
 To pass an environment variable to you program in a one-off fashion you can prepend it to the command line like:
 
 ```
- >>> OMP_NUM_THREADS=4 ./omp_ocean 514 514 100
+ >>> OMP_NUM_THREADS=16 ./omp_ocean 2050 2050 100
 ```
 
-For simplicity, you may assume that the dimensions of the grid are powers of two plus two as before, and that only N=[1,2,4,8,16] will be passed as the number of threads. 
+For simplicity, you may assume that the dimensions of the grid are powers of two plus two as before, and that only `N=[1,2,4,8,16,24,48,96]` will be passed as the number of threads. 
 
 ## Problem 3: Analysis of Ocean (15 points)
 
 Modify your programs to measure the execution time of the parallel phase of execution.
 
-Compare the performance of your two Ocean implementations for a fixed number of time steps (100). Plot the normalized (versus the sequential version of Ocean) speedups of your implementations on N=[1,2,4,8,16] threads for a 514x514 ocean. Note that the N=1 case should be the sequential version of Ocean, not the parallel version using only 1 thread. Repeat for an ocean sized to 1026x1026. 
+Compare the performance of your two Ocean implementations for a fixed number of time steps (100). Plot the normalized (versus the sequential version of Ocean) speedups of your implementations on `N=[1,2,4,8,16,24,48,96]` threads for a 2050x2050 ocean. Note that the N=1 case should be the sequential version of Ocean, not the parallel version using only 1 thread. Repeat for an ocean sized to 4098x4098. 
 
 ## Problem 4: Parallelization using static partitioning of the grid (15 points)
 
@@ -113,9 +113,9 @@ In problem 2, you used OpenMP's automatic parallelization capabilities. However,
 
 In this problem, you will need to implement a parallel version of Ocean that works on statically partitioned regions of data. In each time step, a thread would only update the grid cells belonging to its region.
 
-Plot the speedups obtained with the static sheduling compared to the speedups obtained using dynamic implementation from problem 2.
-For N=8 threads and 100 time steps, use various Ocean sizes to identify the grid sizes where static partitioning performs better than dynamic partitioning.
-Present arguments on why you think this is the case. Vary the chunk size for static scheduling, plot and explain trends. 
+Plot the speedups obtained with the static scheduling compared to the speedups obtained using dynamic implementation from problem 2.
+For `N=24` threads and 100 time steps, use various Ocean sizes to identify the grid sizes where static partitioning performs better than dynamic partitioning.
+Present arguments on why you think this is the case. Vary the chunk size for static scheduling, plot the results, and explain trends. 
 
 ## Problem 5: Architecture specific optimizations (Extra Credit)
 
@@ -134,14 +134,12 @@ Your answers to the questions and explanation for your results is what is import
 
 ## What to Hand In:
 
-(TODO)
+
   
 ## Tips and Tricks:
   
    - Start early.
-   - Set up RSA authentication to save yourself some keystrokes. [HowTo](http://pages.cs.wisc.edu/~gibson/usingRSA.html).
-   - Make use of the demo programs provided.
-   - You can use /proc/cpuinfo to learn many useful characteristics of your host machine.
+   - Amarillo is a dual-socket AMD Epyc server. It has two [AMD 7451](https://www.amd.com/en/products/cpu/amd-epyc-7451) processors with 24 cores per socket (48 total) and each is dual-threaded running at 2.3 GHz (3.2 GHz boost).
    - Run your programs multiple times to get accurate time measurements. This will help avoid incorrect results due to interference with other user's programs.
-   - While making your measurements do take care that no-one else is running his/her program on the machine. Otherwise, it will provide you as well as the other person wrong results as well as longer runtimes.
-   - Do not wait until the last day to run the experiments. You might not get time on the machine to get good results. Hint: The best time to run your experiments is 12-6am??? 
+   - While making your measurements do take care that no-one else is running their program on the machine. Otherwise, it will provide you as well as the other person wrong results as well as longer runtimes.
+   - Do not wait until the last day to run the experiments. You might not get time on the machine to get good results. 
