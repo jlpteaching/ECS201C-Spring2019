@@ -1,8 +1,7 @@
-#include <iostream>
-#include <cstdlib>
 
 #include <chrono>
-#include <ctime>
+#include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -27,8 +26,8 @@ int main(int argc, char* argv[])
     */
     
     if (argc!=4) {
-        printf("The Arguments you entered are wrong.\n");
-        printf("./serial_ocean <x-dim> <y-dim> <timesteps>\n");
+        cout << "The Arguments you entered are wrong." << endl;
+        cout << "./serial_ocean <x-dim> <y-dim> <timesteps>" << endl;
         return EXIT_FAILURE;
     } else {
         xdim = atoi(argv[1]);
@@ -41,7 +40,7 @@ int main(int argc, char* argv[])
     /*********************create the grid as required (start) ************************/
     /*
     The grid needs to be allocated as per the input arguments and randomly initialized.
-    Remember during allocation that we want to gaurentee a contiguous block, hence the
+    Remember during allocation that we want to guarantee a contiguous block, hence the
     nasty pointer math.
 
     To test your code for correctness please comment this section of random initialization.
