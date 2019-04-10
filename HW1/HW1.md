@@ -134,7 +134,14 @@ Your answers to the questions and explanation for your results is what is import
 
 ## What to Hand In:
 
+[Via canvas](...)
+ - A *pdf* file with your answers to the above questions.
+ - A gzipped tarball (e.g., `code.tgz`) with the code you used to answer the questions.
 
+**You are expected to complete the assignment individually.**
+However, you may discuss your solutions, your results, OMP best practices, etc. with one another.
+**The code and answers to the questions must be completed individually.**
+Feel free to use the class [Teams team](https://teams.microsoft.com/l/team/19%3ad6420d6da2ef421fb15ba63709562467%40thread.skype/conversations?groupId=077efc54-af37-496e-9405-8c7783fa2d3e&tenantId=a8046f64-66c0-4f00-9046-c8daf92ff62b) to discuss as well.
   
 ## Tips and Tricks:
   
