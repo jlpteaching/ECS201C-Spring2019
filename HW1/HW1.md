@@ -3,6 +3,8 @@
 
 Note: This homework is a modified version of an assignment from [CS 758 at University of Wisconsin-Madison](http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016/wiki/index.php?n=Main.Homework1).
 
+## DUE Thursday 4/18 before class (10:30am)
+
 Useful links:
 
   - [SPLASH-2 paper](https://dl.acm.org/citation.cfm?id=223990)
