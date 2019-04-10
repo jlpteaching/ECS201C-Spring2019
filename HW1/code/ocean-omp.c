@@ -1,6 +1,9 @@
 
+#include <omp.h>
+
+
+
 void evenStep(int *grid, int xdim, int ydim) {
-    #pragma omp parallel for private(grid, xdim, ydim)
 	for (int i=1; i<xdim-1; i++) {
 		for (int j=1+i%2; j<ydim-1; j+=2) {
 			//printf("Computing location (%d, %d) = %d\n", i, j, j*xdim+i);
@@ -18,7 +21,6 @@ void evenStep(int *grid, int xdim, int ydim) {
 }
 
 void oddStep(int *grid, int xdim, int ydim) {
-    #pragma omp parallel for private(grid, xdim, ydim)
 	for (int i=1; i<xdim-1; i++) {
 		for (int j=1+(i+1)%2; j<ydim-1; j+=2) {
 			//printf("Computing location (%d, %d) = %d\n", i, j, j*xdim+i);
@@ -35,25 +37,10 @@ void oddStep(int *grid, int xdim, int ydim) {
 	}
 }
 
-void ocean (int **grid, int xdim, int ydim, int timesteps)
+void runOcean(int* grid, int xdim, int ydim, int ts)
 {
-    /********************* the red-black algortihm (start)************************/
-    /*
-    In odd timesteps, calculate indeces with - and in even timesteps, calculate indeces with * 
-    See the example of 6x6 matrix, A represents the corner elements. 
-        A A A A A A
-        A - * - * A
-        A * - * - A
-        A - * - * A
-        A * - * - A
-        A A A A A A 
-    */
-
-    // PUT YOUR CODE HERE
-	for (int i=0; i<timesteps; i+=2) {
-		evenStep(*grid, xdim, ydim);
-		oddStep(*grid, xdim, ydim);
+	for (int i=0; i<ts; i+=2) {
+		evenStep(grid, xdim, ydim);
+		oddStep(grid, xdim, ydim);
 	}
-
-    /////////////////////// the red-black algortihm (end) ///////////////////////////
 }
