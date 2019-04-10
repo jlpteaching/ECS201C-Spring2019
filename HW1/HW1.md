@@ -17,6 +17,7 @@ This exercise is intended to provide a gentle introduction to parallel programmi
 You are supposed to use the amarillo machine to get your code working for the final speedups and other results.
 Your accounts are already setup on the machine.
 You can ssh with your kerberos user ID and password.
+(I.e., ssh [username]@amarillo.cs.ucdavis.edu).
 Let Ayaz know via email or teams if you do not have an account.
 
 **Important: When using amarillo, be sure to consider other users.**
@@ -167,4 +168,5 @@ Feel free to use the class [Teams team](https://teams.microsoft.com/l/team/19%3a
    - Amarillo is a dual-socket AMD Epyc server. It has two [AMD 7451](https://www.amd.com/en/products/cpu/amd-epyc-7451) processors with 24 cores per socket (48 total) and each is dual-threaded running at 2.3 GHz (3.2 GHz boost).
    - Run your programs multiple times (two or three times will do for the long running tests) to get accurate time measurements. This will help avoid incorrect results due to interference with other user's programs.
    - While making your measurements do take care that no-one else is running their program on the machine. Otherwise, it will provide you as well as the other person wrong results as well as longer runtimes.
-   - Do not wait until the last day to run the experiments. You might not get time on the machine to get good results. 
+   - Do not wait until the last day to run the experiments. You might not get time on the machine to get good results.
+   - You may want to [set up ssh keys](http://csifdocs.cs.ucdavis.edu/about-us/csif-general-faq#TOC-How-do-I-set-up-SSH-keys-to-allow-me-to-login-to-the-CSIF-computers-without-a-password-) to save yourself some keystrokes by not having to type in your password every time.
