@@ -96,7 +96,7 @@ The number of threads will be passed to the program based on an environment vari
 To pass an environment variable to you program in a one-off fashion you can prepend it to the command line like:
 
 ```
- >>> OMP_NUM_THREADS=16 ./omp_ocean 2050 2050 100
+ >>> OMP_NUM_THREADS=16 ./omp_ocean 8194 8194 100
 ```
 
 For simplicity, you may assume that the dimensions of the grid are powers of two plus two as before, and that only `N=[1,2,4,8,16,24,48,96]` will be passed as the number of threads. 
@@ -105,7 +105,7 @@ For simplicity, you may assume that the dimensions of the grid are powers of two
 
 Modify your programs to measure the execution time of the parallel phase of execution.
 
-Compare the performance of your two Ocean implementations for a fixed number of time steps (100). Plot the normalized (versus the sequential version of Ocean) speedups of your implementations on `N=[1,2,4,8,16,24,48,96]` threads for a 2050x2050 ocean. Note that the N=1 case should be the sequential version of Ocean, not the parallel version using only 1 thread. Repeat for an ocean sized to 4098x4098. 
+Compare the performance of your two Ocean implementations for a fixed number of time steps (100). Plot the normalized (versus the sequential version of Ocean) speedups of your implementations on `N=[1,2,4,8,16,24,48,96]` threads for a 8194x8194 ocean. Note that the N=1 case should be the sequential version of Ocean, not the parallel version using only 1 thread. Repeat for an ocean sized to 16386x16386. 
 
 ## Problem 4: Parallelization using static partitioning of the grid (15 points)
 

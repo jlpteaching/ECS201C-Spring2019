@@ -1,5 +1,3 @@
-#include <omp.h>
-
 void ocean (int **grid, int xdim, int ydim, int timesteps)
 {
     /********************* the red-black algortihm (start)************************/
