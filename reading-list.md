@@ -49,7 +49,7 @@ Sections numbers are *inclusive*. Your review of the synthsis lecture may be str
 
 **Review:** Sections 1.0-1.4, 4.0-4.3.3, 5.0-5.2.5. [Shared-Memory Synchronization](https://www.morganclaypool.com/doi/abs/10.2200/S00499ED1V01Y201304CAC023). Michael L. Scott. Synthesis Lectures on Computer Architecture.
 
-**Read:** [How to make a multiprocessor computer that correctly executes multiprocess programs](dist/toc79_sc.pdf). Leslie Lamport. IEEE Transaction on Computing. 1979. (It's only 2 pages)
+**Read:** [How to make a multiprocessor computer that correctly executes multiprocess programs](https://ieeexplore.ieee.org/document/1675439). Leslie Lamport. IEEE Transaction on Computing. 1979. (It's only 2 pages)
 
 ## 4/23 Lecture 7: Consistency 2 / Cache Coherence 1
 
