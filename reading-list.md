@@ -38,3 +38,31 @@ Webpage with interactive plots: http://research.cs.wisc.edu/multifacet/gables/
 
 **Reference:** [Haswell: The Fourth-Generation Intel Core Processor](https://ieeexplore.ieee.org/document/6762795). Per Hammarlund, Alberto J. Martinez,
 Atiq A. Bajwa, David L. Hill, Erik Hallnor, Hong Jiang, Martin Dixon, Michael Derr, Mikal Hunsaker, Rajesh Kumar, Randy B. Osborne, Ravi Rajwar, Ronak Singhal, Reynold D’Sa, Robert Chappell, Shiv Kaushik, Srinivas Chennupaty, Stephan Jourdan, Steve Gunther, Tom Piazza, Ted Burton. IEEE Micro. 2014.
+
+## 4/16 Lecture 5: Parallel architecture intro 
+
+**Review:** [Data parallel algorithms](https://dl.acm.org/citation.cfm?id=7903) W. Daniel Hillis and Guy L. Steele, Jr.. 1986. Data parallel algorithms. Commun. ACM 29, 12 (December 1986)
+
+## 4/18 Lecture 6: Memory consistency 1
+
+Sections numbers are *inclusive*. Your review of the synthsis lecture may be structured a little differently than a normal research paper.
+
+**Review:** Sections 1.0-1.4, 4.0-4.3.3, 5.0-5.2.5. [Shared-Memory Synchronization](https://www.morganclaypool.com/doi/abs/10.2200/S00499ED1V01Y201304CAC023). Michael L. Scott. Synthesis Lectures on Computer Architecture.
+
+**Read:** [How to make a multiprocessor computer that correctly executes multiprocess programs](dist/toc79_sc.pdf). Leslie Lamport. IEEE Transaction on Computing. 1979. (It's only 2 pages)
+
+## 4/23 Lecture 7: Consistency 2 / Cache Coherence 1
+
+Sections numbers are *inclusive*. Your review of the synthsis lecture may be structured a little differently than a normal research paper.
+
+**Read:** Chapters 1 and 2. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
+
+**Review:** Chapter 3. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
+
+## 4/23 Lecture 8: Cache Coherence 2
+
+Sections numbers are *inclusive*. Your review of the synthsis lecture may be structured a little differently than a normal research paper.
+
+**Review:** Chapter 6. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
+
+**Read:** Sections 7.0-7.2 and 8.0-8.3,8.6. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
