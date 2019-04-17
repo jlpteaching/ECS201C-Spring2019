@@ -45,15 +45,17 @@ Atiq A. Bajwa, David L. Hill, Erik Hallnor, Hong Jiang, Martin Dixon, Michael De
 
 ## 4/18 Lecture 6: Memory consistency 1
 
-Sections numbers are *inclusive*. Your review of the synthsis lecture may be structured a little differently than a normal research paper.
+Sections numbers are *inclusive*. Your review of the synthesis lecture may be structured a little differently than a normal research paper.
 
 **Review:** Sections 1.0-1.4, 4.0-4.3.3, 5.0-5.2.5. [Shared-Memory Synchronization](https://www.morganclaypool.com/doi/abs/10.2200/S00499ED1V01Y201304CAC023). Michael L. Scott. Synthesis Lectures on Computer Architecture.
+
+Errata: http://www.cs.rochester.edu/u/scott/SMS/errata.shtml
 
 **Read:** [How to make a multiprocessor computer that correctly executes multiprocess programs](https://ieeexplore.ieee.org/document/1675439). Leslie Lamport. IEEE Transaction on Computing. 1979. (It's only 2 pages)
 
 ## 4/23 Lecture 7: Consistency 2 / Cache Coherence 1
 
-Sections numbers are *inclusive*. Your review of the synthsis lecture may be structured a little differently than a normal research paper.
+Sections numbers are *inclusive*. Your review of the synthesis lecture may be structured a little differently than a normal research paper.
 
 **Read:** Chapters 1 and 2. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
 
@@ -61,7 +63,7 @@ Sections numbers are *inclusive*. Your review of the synthsis lecture may be str
 
 ## 4/23 Lecture 8: Cache Coherence 2
 
-Sections numbers are *inclusive*. Your review of the synthsis lecture may be structured a little differently than a normal research paper.
+Sections numbers are *inclusive*. Your review of the synthesis lecture may be structured a little differently than a normal research paper.
 
 **Review:** Chapter 6. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
 
