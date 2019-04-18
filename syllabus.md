@@ -154,18 +154,18 @@ Dates may change throughout the quarter.
 | 16-Apr | Parallel CPU architecture intro |                                                           |
 | 18-Apr | Memory consistency              | MIMD assignment due (OMP)                                 |
 | 23-Apr | Cache coherence                 |                                                           |
-| 25-Apr | Cache coherence                 | MIMD assignment 2 due (C++ threads / locking / lock free) |
-| 30-Apr | Distributed computing           |                                                           |
-| 2-May  | Distributed computing           | Hadoop assignment due                                     |
+| 25-Apr | Talk                            |                                                           |
+| 30-Apr | Cache coherence                 | MIMD assignment 2 due (C++ threads / locking / lock free) |
+| 2-May  | Distributed computing           |                                                           |
 | 7-May  | Proposal meetings               | Proposals due                                             |
-| 9-May  | GPUs                            |                                                           |
-| 14-May | GPUs                            | GPU assignment due                                        |
-| 16-May | Accelerator intro               |                                                           |
-| 21-May | Dataflow accelerators           |                                                           |
-| 23-May | Machine learning accelerators   | Tensorflow assignment due                                 |
+| 9-May  | Distributed computing           | Hadoop assignment due                                     |
+| 14-May | GPUs                            |                                                           |
+| 16-May | GPUs                            | GPU assignment due                                        |
+| 21-May | Accelerator intro               |                                                           |
+| 23-May | Dataflow accelerators           |                                                           |
 | 28-May | Project meetings                | Project status report due                                 |
-| 30-May | Quantum computing               |                                                           |
-| 4-Jun  | Persistent memory               | Quantum assignment due                                    |
-| 6-Jun  | FPGAs                           |                                                           |
+| 30-May | Machine learning accelerators   | Tensorflow assignment due                                 |
+| 4-Jun  | Quantum computing               |                                                           |
+| 6-Jun  | Persistent memory               | Quantum assignment due                                    |
 | 7-Jun  | Class conference?               |                                                           |
 | 13-Jun |                                 | Final reports due                                         |
