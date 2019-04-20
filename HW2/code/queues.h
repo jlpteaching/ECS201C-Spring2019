@@ -33,38 +33,50 @@ class MutexFixedSizeQueue : public FixedSizeQueueInterface<T> {
     std::mutex* mutex_;
   };
 
-  MutexFixedSizeQueue(int max_size) : max_size_(max_size) { }
+  MutexFixedSizeQueue(int max_size) : max_size_(max_size), buffer_(new Entry[max_size])
+  { }
 
   // Reads the next data item into 'data', returns true
   // if successful or false if the queue was empty.
   bool Read(T* data) {
-    ScopedLock lock(&mutex_);
-    if (queue_.empty()) {
-      return false;
+    ScopedLock l(&mutex_);
+    if (!buffer_[tail_].valid) {
+      return false; // empty
     }
-    *data = queue_.front();
-    queue_.pop_front();
+    *data = buffer_[tail_].data;
+    buffer_[tail_].valid = false;
+    tail_ = (tail_ + 1) % max_size_;
     return true;
   }
 
   // Writes 'data' into the queue.  Returns true if successful
   // or false if the queue was full.
   bool Write(const T& data) {
-    ScopedLock lock(&mutex_);
-    if (queue_.size() > max_size_) {
-      return false;
+    ScopedLock l(&mutex_);
+    if (buffer_[head_].valid) {
+      return false; // full
     }
-    queue_.push_back(data);
+    buffer_[head_].data = data;
+    buffer_[head_].valid = true;
+    head_ = (head_ + 1) % max_size_;
     return true;
   }
 
   bool isEmpty() {
-      return queue_.empty();
+    return head_ == tail_ && !buffer_[tail_].valid;
   }
 
- private:
-  std::deque<T> queue_;
+ private:struct Entry {
+    T data;
+    bool valid = false;
+  };
+
   int max_size_;
+  Entry* buffer_;
+
+  int head_ __attribute__((aligned(64))) = 0;
+  int tail_ __attribute__((aligned(64))) = 0;
+
   std::mutex mutex_;
 };
 
@@ -78,10 +90,6 @@ class SingleProducerSingleConsumerFixedSizeQueue : public FixedSizeQueueInterfac
       buffer_(new Entry[max_size]),
       head_(0),
       tail_(0) {
-    /* Needs to be updated */      
-    for (int i = 0; i < max_size; ++i) {
-      buffer_[i].valid = false;
-    }
   }
 
   ~SingleProducerSingleConsumerFixedSizeQueue() {
@@ -89,17 +97,17 @@ class SingleProducerSingleConsumerFixedSizeQueue : public FixedSizeQueueInterfac
   }
 
   virtual bool Read(T* w) {
-    /* Needs to be updated */      
+    /* Needs to be updated */
       return true;
   }
 
   virtual bool Write(const T& w) {
-    /* Needs to be updated */      
+    /* Needs to be updated */
       return true;
   }
 
   bool isEmpty() {
-      if (head_ == tail_ && !buffer_[tail_].valid) 
+      if (head_ == tail_ && !buffer_[tail_].valid)
           return true;
       else
           return false;
@@ -108,7 +116,7 @@ class SingleProducerSingleConsumerFixedSizeQueue : public FixedSizeQueueInterfac
  private:
   struct Entry {
     T data;
-    bool valid; 
+    bool valid;
   };
 
   int max_size_;
@@ -128,7 +136,7 @@ class SingleProducerMultipleConsumerFixedSizeQueue : public FixedSizeQueueInterf
       buffer_(new Entry[max_size]),
       head_(0),
       tail_(0) {
-    /* Needs to be updated */      
+    /* Needs to be updated */
     for (int i = 0; i < max_size; ++i) {
       buffer_[i].valid = false;
     }
@@ -139,17 +147,17 @@ class SingleProducerMultipleConsumerFixedSizeQueue : public FixedSizeQueueInterf
   }
 
   virtual bool Read(T* w) {
-    /* Needs to be updated */      
+    /* Needs to be updated */
       return true;
   }
 
   virtual bool Write(const T& w) {
-    /* Needs to be updated */      
+    /* Needs to be updated */
       return true;
   }
 
   bool isEmpty() {
-      if (head_ == tail_ && !buffer_[tail_].valid) 
+      if (head_ == tail_ && !buffer_[tail_].valid)
           return true;
       else
           return false;
@@ -158,7 +166,7 @@ class SingleProducerMultipleConsumerFixedSizeQueue : public FixedSizeQueueInterf
  private:
   struct Entry {
     T data;
-    bool valid; 
+    bool valid;
   };
 
   int max_size_;
@@ -168,7 +176,7 @@ class SingleProducerMultipleConsumerFixedSizeQueue : public FixedSizeQueueInterf
 };
 
 
-// Implements a fixed-size queue using no lock, but limited to multiple 
+// Implements a fixed-size queue using no lock, but limited to multiple
 // producer threads and a single consumer thread.
 template<typename T>
 class MultipleProducerSingleConsumerFixedSizeQueue : public FixedSizeQueueInterface<T> {
@@ -178,7 +186,7 @@ class MultipleProducerSingleConsumerFixedSizeQueue : public FixedSizeQueueInterf
       buffer_(new Entry[max_size]),
       head_(0),
       tail_(0) {
-    /* Needs to be updated */      
+    /* Needs to be updated */
     for (int i = 0; i < max_size; ++i) {
       buffer_[i].valid = false;
     }
@@ -189,17 +197,17 @@ class MultipleProducerSingleConsumerFixedSizeQueue : public FixedSizeQueueInterf
   }
 
   virtual bool Read(T* w) {
-    /* Needs to be updated */      
+    /* Needs to be updated */
       return true;
   }
 
   virtual bool Write(const T& w) {
-    /* Needs to be updated */      
+    /* Needs to be updated */
       return true;
   }
 
   bool isEmpty() {
-      if (head_ == tail_ && !buffer_[tail_].valid) 
+      if (head_ == tail_ && !buffer_[tail_].valid)
           return true;
       else
           return false;
@@ -208,7 +216,7 @@ class MultipleProducerSingleConsumerFixedSizeQueue : public FixedSizeQueueInterf
  private:
   struct Entry {
     T data;
-    bool valid; 
+    bool valid;
   };
 
   int max_size_;
