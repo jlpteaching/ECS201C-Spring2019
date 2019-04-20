@@ -102,7 +102,7 @@ Write a version of the fixed-sized queue with fine-grained locks using std::mute
 
 ### Questions
 
-  - Provide a couple of sentences in the final write-up describing how you convinced yourself your algorithm was implemented correctly.
+1. Provide a couple of sentences in the final write-up describing how you convinced yourself your algorithm was implemented correctly.
 
 ## Problem 2: Use Lock-free programming
 
@@ -118,9 +118,11 @@ As you are working, try to understand how the constraints on the queue - fixed s
 
 For simplicity, you may assume that the number of producer or consumer threads are always in powers of two , and that the total number of operations is always divisible exactly by the number of producers/consumers (**you will get errors if they are not**).
 
-  - Describe your implementations for each of the above queues.
-  - Describe at least 2 notable examples of tricky scenarios you encountered while writing the lock-free implementations.
-  - Provide a couple of sentences in the final writeup describing how you convinced yourself your algorithm was implemented correctly. Describe how the queue constraints simplify your program.
+### Questions
+
+2. Describe your implementations for each of the above queues.
+3. Describe at least 2 notable examples of tricky scenarios you encountered while writing the lock-free implementations.
+4. Provide a couple of sentences in the final writeup describing how you convinced yourself your algorithm was implemented correctly. Describe how the queue constraints simplify your program.
 
 ### Hints
 
@@ -146,24 +148,25 @@ For simplicity, you may assume that the number of producer or consumer threads a
 
 For this analysis, set the number of operations as 10000000, queue size as 1000, and run each experiment for 5 iterations. For each graph, make sure the axes are named correctly, have title, captions and legends as needed, and in general, are self-sufficient. Use only std::memory_order_seq_cst for this portion.
 
-  - Compare the throughput of all 5 queue implementations (MX - provided, FG, LF1, LF2, LF3) for a single producer, single consumer scenario.
-  - Compare the throughput of MX, FG, LF2 for a single producer, multiple consumer case with number of consumer threads = [1,2,4,8,16,24,48,96]
-  - Compare the throughput of MX, FG, LF3 for a multiple producer, single consumer case with number of producer threads = [1,2,4,8,16,24,48,96].
+### Questions
 
-Repeat this experiment on an ARM machine (graviton) for threads=[1,2,4,8,16]. [To Add: Details of AWS accounts]
+5. Compare the throughput of all 5 queue implementations (MX - provided, FG, LF1, LF2, LF3) for a single producer, single consumer scenario.
+6. Compare the throughput of MX, FG, LF2 for a single producer, multiple consumer case with number of consumer threads = [1,2,4,8,16,24,48,96]
+7. Compare the throughput of MX, FG, LF3 for a multiple producer, single consumer case with number of producer threads = [1,2,4,8,16,24,48,96].
 
+8. Repeat this experiment on an ARM machine (graviton) for threads=[1,2,4,8,16]. [To Add: Details of AWS accounts]
 
 ## Problem 4: Analysis with different memory models
 
 For this analysis, set the number of operations as 10000000, queue size as 1000, and run each experiment on amarillo and graviton for 5 iterations. For each graph, make sure the axes are named correctly, have title, captions and legends as needed, and in general, are self-sufficient.
 
-  - Compare the throughput of all 3 lockfree queue implementations (LF1, LF2, LF3) for a single producer, single consumer scenario using both std::memory_order_seq_cst and std::memory_order_acquire/release.
+9. Compare the throughput of all 3 lockfree queue implementations (LF1, LF2, LF3) for a single producer, single consumer scenario using both std::memory_order_seq_cst and std::memory_order_acquire/release.
 
 
 ## What to Hand In:
 
 [Via canvas](...)
- - A *pdf* file with your answers to the above questions.
+ - A *pdf* file with your answers to the above questions (there are 9 above).
  - A gzipped tarball (e.g., `code.tgz`) with the code you used to answer the questions.
 
 **You are expected to complete the assignment individually.**
