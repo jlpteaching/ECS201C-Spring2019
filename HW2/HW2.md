@@ -3,14 +3,33 @@
 
 Note: This homework is a modified version of an assignment from [CS 758 at University of Wisconsin-Madison](http://pages.cs.wisc.edu/~david/courses/cs758/Fall2016/wiki/index.php?n=Main.Homework5).
 
-## DUE [To Add]
+## DUE 4/30 at 10:30am (before class)
 
-Useful links:
+## IMPORTANT HINTS
+
+### Useful links:
 
   - [C++ memory_order reference](https://en.cppreference.com/w/cpp/atomic/memory_order)
   - [Herb Sutter’s atomic weapons](https://channel9.msdn.com/Shows/Going+Deep/Cpp-and-Beyond-2012-Herb-Sutter-atomic-Weapons-1-of-2)
   - [Scott Synthesis12](https://www.morganclaypool.com/doi/abs/10.2200/S00499ED1V01Y201304CAC023?journalCode=cac)
   - [Introduction to Lock-Free Programming](https://preshing.com/20120612/an-introduction-to-lock-free-programming/)
+
+### Work together!
+
+Getting this kind of concurrency right is **hard**.
+Use your classmates as a helpful resource when trying to derive the solutions.
+
+Feel free to discuss algorithms, specific code examples, etc. with one another on Teams or via other venues.
+You may even discuss the results you are getting to see if others are getting similar data.
+However, in the end, you must write your own code and do your own write up of the questions.
+
+### Start early!
+
+Enough said?
+This assignment is significantly harder than the previous assignment.
+You will need to put some time into learning about C++ atomics.
+
+## Introduction
 
 The purpose of the assignment is to give you experience optimizing parallel code using C++ synchronization mechanisms (including "C++11 atomics"). This exercise is intended to allow you to play with some classic locking techniques as well as newer lock-free methods in a simple yet challenging task. Hopefully, this will give you an idea about the subtleties and complexities involved in writing larger and more complex programs using these techniques.
 
@@ -63,21 +82,28 @@ To start you off, we provide you with a sample mutex-based queue implementation 
 A [template](code) is provided for your convenience with the basic setup of the program. This template provides you the initialized queue interface to work with, and the skeleton for the other implementations. You are free to change the benchmarking program for your own purposes, but your code will be checked by programs which assume you adhere to the interfaces provided. A makefile has also been added to the template that will help you in compiling the code. You might need to change the flags in the makefile during debug phase. Do revert them back to allow compiler optimizations.
 
 Download the template from [here](code).
-  - queues.h contains the mutex-based queue implementation, as well as skeletons of other implementations for you to fill out
+  - queues.h contains the mutex-based queue implementation, as well as skeletons of other implementations for you to fill out. This is where your code will go.
   - test.cc is the benchmarking program, which needs to be modified slightly as you add newer implementations, and is invoked thus-
-  
+
   ```
   ./test <num_iterations> <producer_threads> <consumer_threads>
   ```
-  
+
 The number of producer threads is only used for the mutex and the LF3, while the number of consumer threads is used for the mutex and LF2. The benchmarking program runs the tests for a given number of iterations, and averages the throughput. Some useful macros and test parameters are provided at the beginning of test.cc
-  
+
 ## Problem 1: Utilize fine-grained Locks
 
 Write a version of the fixed-sized queue with fine-grained locks using std::mutex. To achieve this, your implementation needs to have one lock per element of the queue, instead of using one BIG lock for the whole queue. Feel free to move the declaration of kMaxQueueSize=1000 to the file queues.h from test.cc. You will need this to declare a fixed size array of mutexes. For simplicity, you may assume that the number of producer or consumer threads are always in powers of two, and that the total number of operations is always divisible exactly by the number of producers/consumers.
 
+### Hints
+ - You can add new data structures to the code and/or modify current data structures, if needed. You only need to keep the interface the same (so it works with the test code).
+ - You can put a mutex as part of the `Entry` class.
+ - Remember what is local to one thread and what is globally visible.
+
+### Questions
+
   - Provide a couple of sentences in the final write-up describing how you convinced yourself your algorithm was implemented correctly.
-  
+
 ## Problem 2: Use Lock-free programming
 
 For this problem, you will use lock-free techniques to implement a circular fixed-sized queue. As lock-free programming can be rather tricky, you will do this in stages.
@@ -87,15 +113,35 @@ The first part is (almost) straightforward. You can start by creating a regular 
   - Develop a lock-free circular queue implementation which works with a single producer and a single consumer (LF1).
   - Develop a lock-free circular queue implementation which works with a single producer and multiple consumers (LF2).
   - Develop a lock-free circular queue implementation which works with multiple producers and a single consumer (LF3).
-  
-As you are working, try to understand how the constraints on the queue - fixed size and circular, help your case for the lock-free implementations. Also, if you do not manage to get these working correctly, an analysis of what error is occurring (for instance the ABA problem) will get you partial credit.
 
-For simplicity, you may assume that the number of producer or consumer threads are always in powers of two, and that the total number of operations is always divisible exactly by the number of producers/consumers.
+As you are working, try to understand how the constraints on the queue - fixed size and circular, help your case for the lock-free implementations. Also, **if you do not manage to get these working correctly, an analysis of what error is occurring** (for instance the ABA problem) will get you partial credit.
+
+For simplicity, you may assume that the number of producer or consumer threads are always in powers of two , and that the total number of operations is always divisible exactly by the number of producers/consumers (**you will get errors if they are not**).
 
   - Describe your implementations for each of the above queues.
   - Describe at least 2 notable examples of tricky scenarios you encountered while writing the lock-free implementations.
   - Provide a couple of sentences in the final writeup describing how you convinced yourself your algorithm was implemented correctly. Describe how the queue constraints simplify your program.
-  
+
+### Hints
+
+ - Debugging multithreaded programs is a pain. Some suggestions
+   - Use asserts, not print-based debugging when you can
+   - When you do use print-based debugging use a [string stream](https://en.cppreference.com/w/cpp/io/basic_stringstream) to save the info you want print and dump it all at once with (`std::cout << stream.str();`)
+ - Testing with very small queue sizes (e.g., 1 or 10) often causes problems faster
+ - Ask for help if you are stuck! This is what office hours and the Teams is for!
+
+#### LF1
+
+ - You don't need any fancy atomic operations
+ - You may want to use [C++ `atomic` variables](https://en.cppreference.com/w/cpp/atomic/atomic) and use the `load()` and `store()` functions. This may or may not be required ;).
+
+#### LF2
+ - You will likely want to use [C++ `atomic` variables](https://en.cppreference.com/w/cpp/atomic/atomic) and [atomic compare and exchange](https://en.cppreference.com/w/cpp/atomic/atomic/compare_exchange) functions.
+ - For now, ignore the memory order options and assume sequential consistency (`std::memory_order_seq_cst`).
+
+#### LF3
+ - The solution to this problem should be *very* similar to the solution to LF2
+
 ## Problem 3: Analysis of Fixed Size Queues
 
 For this analysis, set the number of operations as 10000000, queue size as 1000, and run each experiment for 5 iterations. For each graph, make sure the axes are named correctly, have title, captions and legends as needed, and in general, are self-sufficient. Use only std::memory_order_seq_cst for this portion.
@@ -103,18 +149,18 @@ For this analysis, set the number of operations as 10000000, queue size as 1000,
   - Compare the throughput of all 5 queue implementations (MX - provided, FG, LF1, LF2, LF3) for a single producer, single consumer scenario.
   - Compare the throughput of MX, FG, LF2 for a single producer, multiple consumer case with number of consumer threads = [1,2,4,8,16,24,48,96]
   - Compare the throughput of MX, FG, LF3 for a multiple producer, single consumer case with number of producer threads = [1,2,4,8,16,24,48,96].
-  
-  Repeat this experiment on an ARM machine (graviton) for threads=[1,2,4,8,16]. [To Add: Details of AWS accounts]
-  
-  
-  ## Problem 4: Analysis with different memory models
-  
+
+Repeat this experiment on an ARM machine (graviton) for threads=[1,2,4,8,16]. [To Add: Details of AWS accounts]
+
+
+## Problem 4: Analysis with different memory models
+
 For this analysis, set the number of operations as 10000000, queue size as 1000, and run each experiment on amarillo and graviton for 5 iterations. For each graph, make sure the axes are named correctly, have title, captions and legends as needed, and in general, are self-sufficient.
 
   - Compare the throughput of all 3 lockfree queue implementations (LF1, LF2, LF3) for a single producer, single consumer scenario using both std::memory_order_seq_cst and std::memory_order_acquire/release.
-  
 
-  ## What to Hand In:
+
+## What to Hand In:
 
 [Via canvas](...)
  - A *pdf* file with your answers to the above questions.
