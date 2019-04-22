@@ -2,6 +2,7 @@
 #define QUEUES_H_
 
 #include <atomic>
+#include <cassert>
 #include <deque>
 #include <mutex>
 
@@ -40,12 +41,15 @@ class MutexFixedSizeQueue : public FixedSizeQueueInterface<T> {
   // if successful or false if the queue was empty.
   bool Read(T* data) {
     ScopedLock l(&mutex_);
-    if (!buffer_[tail_].valid) {
+    uint32_t location = tail_ % max_size_;
+    if (!buffer_[location].valid || tail_ == head_) {
       return false; // empty
     }
-    *data = buffer_[tail_].data;
-    buffer_[tail_].valid = false;
-    tail_ = (tail_ + 1) % max_size_;
+    assert(head_ >= tail_);
+    assert(buffer_[location].valid == true);
+    *data = buffer_[location].data;
+    buffer_[location].valid = false;
+    tail_ = tail_ + 1;
     return true;
   }
 
@@ -53,17 +57,20 @@ class MutexFixedSizeQueue : public FixedSizeQueueInterface<T> {
   // or false if the queue was full.
   bool Write(const T& data) {
     ScopedLock l(&mutex_);
-    if (buffer_[head_].valid) {
+    uint32_t location = head_ % max_size_;
+    if (buffer_[location].valid || head_ == tail_ + max_size_) {
       return false; // full
     }
-    buffer_[head_].data = data;
-    buffer_[head_].valid = true;
-    head_ = (head_ + 1) % max_size_;
+    assert(head_ >= tail_);
+    assert(buffer_[location].valid == false);
+    buffer_[location].data = data;
+    buffer_[location].valid = true;
+    head_ = head_ + 1;
     return true;
   }
 
   bool isEmpty() {
-    return head_ == tail_ && !buffer_[tail_].valid;
+    return head_ == tail_ && !buffer_[tail_ % max_size_].valid;
   }
 
  private:struct Entry {
@@ -74,8 +81,8 @@ class MutexFixedSizeQueue : public FixedSizeQueueInterface<T> {
   int max_size_;
   Entry* buffer_;
 
-  int head_ __attribute__((aligned(64))) = 0;
-  int tail_ __attribute__((aligned(64))) = 0;
+  uint32_t head_ __attribute__((aligned(64))) = 0;
+  uint32_t tail_ __attribute__((aligned(64))) = 0;
 
   std::mutex mutex_;
 };
