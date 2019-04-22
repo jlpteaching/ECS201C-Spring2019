@@ -101,7 +101,18 @@ Download the template from [here](code).
   ./test <num_iterations> <producer_threads> <consumer_threads>
   ```
 
-The number of producer threads is only used for the mutex and the LF3, while the number of consumer threads is used for the mutex and LF2. The benchmarking program runs the tests for a given number of iterations, and averages the throughput. Some useful macros and test parameters are provided at the beginning of test.cc
+The number of producer threads is only used for the mutex and the LF3, while the number of consumer threads is used for the mutex and LF2. The benchmarking program runs the tests for a given number of iterations, and averages the throughput. Some useful macros and test parameters are provided at the beginning of test.cc.
+
+We have added a few asserts to help you keep a couple of invariants.
+We found these invariants helpful when debugging as we were creating/updating this assignment.
+
+1. The head pointer should always be greater than or equal to the tail pointer.
+2. When reading, the node should always be valid, and when writing the node pointer should always be invalid.
+
+You may want to add more asserts for other invariants you find useful when debugging.
+Feel free to let your classmates know what invariants are useful.
+
+**NOTE:** You should remove these debugging asserts when running your tests!
 
 ## Problem 1: Utilize fine-grained Locks
 
@@ -162,11 +173,11 @@ For this analysis, set the number of operations as 10000000, queue size as 1000,
 
 ### Questions
 
-5. Compare the throughput of all 5 queue implementations (MX - provided, FG, LF1, LF2, LF3) for a single producer, single consumer scenario.
-6. Compare the throughput of MX, FG, LF2 for a single producer, multiple consumer case with number of consumer threads = [1,2,4,8,16,24,48,96]
-7. Compare the throughput of MX, FG, LF3 for a multiple producer, single consumer case with number of producer threads = [1,2,4,8,16,24,48,96].
+5. Compare the throughput of all 5 queue implementations (MX - provided, FG, LF1, LF2, LF3) for a single producer, single consumer scenario. If you LF version is faster (or slower), describe why you think this is.
+7. Compare the throughput of MX, FG, LF2 for a single producer, multiple consumer case with number of consumer threads = [1,2,4,8,16,24,48]
+8. Compare the throughput of MX, FG, LF3 for a multiple producer, single consumer case with number of producer threads = [1,2,4,8,16,24,48].
 
-8. Repeat this experiment on an ARM machine (graviton) for threads=[1,2,4,8,16]. [To Add: Details of AWS accounts]
+9. Repeat this experiment (#7 and #8) on an ARM machine (graviton) for threads=[1,2,4,8,16]. [To Add: Details of AWS accounts]
 
 ## Problem 4: Analysis with different memory models
 
