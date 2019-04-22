@@ -56,6 +56,18 @@ Lock-free techniques are supported in C++11 by the introduction of atomic\<T\>, 
 template< class T > bool atomic_compare_exchange_*( std::atomic<T>* obj,T* expected, T desired );
 ```
 
+You'll likely want to read up a bit on the [C/C++ memory model](https://en.cppreference.com/w/cpp/language/memory_model) before digging into the lock-free implementations.
+Specifically, you'll want to make sure your program has no data races [as defined by the C++ specification](https://en.cppreference.com/w/cpp/language/memory_model#Threads_and_data_races):
+
+> When an evaluation of an expression writes to a memory location and another evaluation reads or modifies the same memory location, the expressions are said to conflict. A program that has two conflicting evaluations has a data race unless
+> - both evaluations execute on the same thread or in the same signal handler, or
+> - both conflicting evaluations are atomic operations (see std::atomic), or
+> - one of the conflicting evaluations happens-before another (see std::memory_order)
+
+To accomplish this in your lock-free design, you will want to make sure that all variables/data shared between threads are `std::atomic` types.
+I suggest you then explicitly use `load()` and `store()` functions when accessing these variables.
+This will make debugging easier, and it will also make it easier when you try to implement accessing with more relaxed consistency models.
+
 
 ## Programming Task: Fixed Size Queue
 
