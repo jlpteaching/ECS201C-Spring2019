@@ -61,7 +61,7 @@ Sections numbers are *inclusive*. Your review of the synthesis lecture may be st
 
 **Review:** Chapter 3. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
 
-## 4/23 Lecture 8: Cache Coherence 2
+## 4/30 Lecture 8: Cache Coherence 2
 
 Sections numbers are *inclusive*. Your review of the synthesis lecture may be structured a little differently than a normal research paper.
 
