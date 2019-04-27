@@ -177,7 +177,16 @@ For this analysis, set the number of operations as 10000000, queue size as 1000,
 7. Compare the throughput of MX, FG, LF2 for a single producer, multiple consumer case with number of consumer threads = [1,2,4,8,16,24,48]
 8. Compare the throughput of MX, FG, LF3 for a multiple producer, single consumer case with number of producer threads = [1,2,4,8,16,24,48].
 
-9. Repeat this experiment (#7 and #8) on an ARM machine (graviton) for threads=[1,2,4,8,16]. [To Add: Details of AWS accounts]
+9. Repeat this experiment (#7 and #8) on an ARM machine (graviton) for threads=[1,2,4,8,16].
+
+### Logging into the graviton machine
+
+The [graviton](https://aws.amazon.com/blogs/compute/getting-started-with-the-a1-instance/) machine is a 16 core custom ARM system hosted in Amazon AWS.
+
+To log in, see [this teams post](https://teams.microsoft.com/l/message/19:9a9cb8e3c3db421d816259300adca0a7@thread.skype/1556327017667?tenantId=a8046f64-66c0-4f00-9046-c8daf92ff62b&groupId=077efc54-af37-496e-9405-8c7783fa2d3e&parentMessageId=1556327017667&teamName=ECS%20201C%20Spring%202019&channelName=Homeworks&createdTime=1556327017667).
+
+Everyone is logging in as the same user, so please create a personal directory.
+Also, don't sneak any peaks at others' answers ;).
 
 ## Problem 4: Analysis with different memory models
 
