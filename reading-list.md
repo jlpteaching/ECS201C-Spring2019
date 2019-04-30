@@ -68,3 +68,11 @@ Sections numbers are *inclusive*. Your review of the synthesis lecture may be st
 **Review:** Chapter 6. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
 
 **Read:** Sections 7.0-7.2 and 8.0-8.3,8.6. [A Primer on Memory Consistency and Cache Coherence](https://www.morganclaypool.com/doi/abs/10.2200/S00346ED1V01Y201104CAC016)
+
+## 5/2 Lecture 9: Distributed systems
+
+**Review**: [Attack of the Killer Microsecond](https://dl.acm.org/citation.cfm?id=3015146). LUIZ BARROSO, MIKE MARTY, DAVID PATTERSON, AND ARTHASARATHY RANGANATHAN. CACM 2017.
+
+**Read**: Chapter 1 of [The Datacenter as a Computer: Designing Warehouse-Scale Machines, Third Edition](https://www.morganclaypool.com/doi/abs/10.2200/S00874ED3V01Y201809CAC046). Luiz André Barroso, Urs Hölzle, Parthasarathy Ranganathan.
+
+**Reference**: [The Datacenter as a Computer: Designing Warehouse-Scale Machines, Third Edition](https://www.morganclaypool.com/doi/abs/10.2200/S00874ED3V01Y201809CAC046). Luiz André Barroso, Urs Hölzle, Parthasarathy Ranganathan.
