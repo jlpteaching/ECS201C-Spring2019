@@ -112,4 +112,24 @@ I wonder if these ideas would be applicable to other programming models.
 
 Looking at one specific domain (e.g., machine learning) could be a way to limit the scope of this project.
 
+### Comparison of different SIMD extensions
 
+Each ISA has its own set of SIMD extensions.
+x86 has [MMX, SSE, SSE2, SSSE3, AVX, AVX2, AVX512, and others](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions),
+ARMv8 has "scalable" vector extentions ([SVE](https://community.arm.com/developer/tools-software/hpc/b/hpc-blog/posts/technology-update-the-scalable-vector-extension-sve-for-the-armv8-a-architecture)),
+and RISC-V has its own [proposal](https://riscv.github.io/documents/riscv-v-spec/riscv-v-spec.pdf).
+
+In this project, you could compare and contrast the programmability and performance of these extensions.
+Another option would be to use an architectural simulator (e.g., gem5) to implement all of these extensions in a single CPU design and compare their performance.
+gem5 currently has support for ARM's SVE, but not all of the x86 extensions or the RISC-V proposal.
+(Note: updating gem5 with support for x86 and RISC-V vector instructions would be very impactful to the broader gem5 community.)
+
+### On-chip network simulation
+
+[Multi-chip modules](https://en.wikipedia.org/wiki/Multi-chip_module) (MCMs) are becoming common in today's packages.
+Both NVIDIA GPUs and AMD server systems are build with MCMs.
+
+While there is a plethora of research on the design of on-chip networks (OCNs) and inter-system networks (e.g., ethernet), there has not been much work on MCM networks.
+This project could look at the tradeoffs between bisection bandwidth, latency, and cost for these emerging networks.
+
+The [Synthesis Lecture on On-Chip Networks](https://www.morganclaypool.com/doi/abs/10.2200/S00772ED1V01Y201704CAC040) would be a good place to start to get some good background.
