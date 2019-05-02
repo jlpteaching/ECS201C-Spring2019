@@ -96,4 +96,20 @@ You may want to use hardware simulation platforms (e.g., [gem5](http://gem5.org/
 
 ## Specific project ideas
 
+### Hybrid coherence protocol
+
+How can you optimize the coherence protocol of a system if you have hints from software?
+If you were to do a hardware-software co-design of the coherence protocol, how would you do it?
+
+#### Related work
+
+There is a set of work called "DeNovo" from UIUC.
+The [webpage](http://rsim.cs.illinois.edu/denovo/pubs.html) has a number of publications including some GPU-specific protocols.
+The [first paper on DeNovo](http://rsim.cs.illinois.edu/denovo/Pubs/11-pact-denovo.pdf) at PACT gives a good overview.
+
+DeNovo leverages deterministic parallel Java (DPJ) to overcome some complexity.
+I wonder if these ideas would be applicable to other programming models.
+
+Looking at one specific domain (e.g., machine learning) could be a way to limit the scope of this project.
+
 
