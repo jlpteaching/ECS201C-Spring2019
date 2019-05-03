@@ -76,3 +76,26 @@ Sections numbers are *inclusive*. Your review of the synthesis lecture may be st
 **Read**: Chapter 1 of [The Datacenter as a Computer: Designing Warehouse-Scale Machines, Third Edition](https://www.morganclaypool.com/doi/abs/10.2200/S00874ED3V01Y201809CAC046). Luiz André Barroso, Urs Hölzle, Parthasarathy Ranganathan.
 
 **Reference**: [The Datacenter as a Computer: Designing Warehouse-Scale Machines, Third Edition](https://www.morganclaypool.com/doi/abs/10.2200/S00874ED3V01Y201809CAC046). Luiz André Barroso, Urs Hölzle, Parthasarathy Ranganathan.
+
+## 5/9 Lecture 10: Programming distributed systems
+
+**Review**: [MapReduce: simplified data processing on large clusters](https://dl.acm.org/citation.cfm?id=1327492). CACM 2008.
+
+## 5/14 Lecture 11: GPUs 1
+Note: Read the Synthesis lecture before doing the review. It will help :).
+
+**Read**: Chapters 1 and 2 of [General-Purpose Graphics Processor Architectures](https://www.morganclaypool.com/doi/10.2200/S00848ED1V01Y201804CAC044). Tor M. Aamodt, Wilson Wai Lun Fung, Timothy G. Rogers. 2018.
+
+**Review**: [GPUs and the Future of Parallel Computing](https://ieeexplore.ieee.org/document/6045685). Stephen W. Keckler, William J. Dally, Brucek Khailany, Michael Garland, David Glasco. IEEE MICRO 2011.
+
+## 5/16 Lecture 12: GPUs 2
+
+**Review**: [Cache-Conscious Wavefront Scheduling](https://dl.acm.org/citation.cfm?id=2457487). Timothy G. Rogers, Mike O'Connor, Tor M. Aamodt. MICRO 2012.
+
+## 5/21 Lecture 13: Accelerators 1
+
+**Review**: [Dark silicon and the end of multicore scaling](https://dl.acm.org/citation.cfm?id=2000108). Hadi Esmaeilzadeh, Emily Blem, Renée St. Amant, Karthikeyan Sankaralingam, Doug Burger. ISCA 2011.
+
+## 5/23 Lecture 14: More Accelerators
+
+**Review**: [In-Datacenter Performance Analysis of a Tensor Processing Unit](https://dl.acm.org/citation.cfm?id=3080246). Norman P. Jouppi, Cliff Young, Nishant Patil, David Patterson, et al.  ISCA 2017.
