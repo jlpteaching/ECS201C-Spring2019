@@ -1,4 +1,7 @@
+# Homework 3: Map reduce
 
+## DUE 5/16 at 10:30am (before class).
+**No late assignments will be accepted!**
 
 ## Analyzing the Internet
 
@@ -22,7 +25,7 @@ You can use these files (or a subset `head -n100000 <file> > smaller-file`) to t
 
 I have downloaded eight of these files to Amarillo for testing.
 You can find them in `/data1/ECS201C/common-crawl/`.
-I created an input file `/data1/ECS201C/common-crawl/input.txt` which lists these files.
+I split these files into ~3MB chunks, and I created an input file `/data1/ECS201C/common-crawl/input.txt` which lists these files.
 
 ## Map-reduce framework
 
@@ -62,4 +65,35 @@ Note that after setting up the first time, each time you start a new console you
 
 ## Problems
 
-###
+### TLD count
+
+Write a map reduce job to count the number of occurrences of each [top level domain](https://en.wikipedia.org/wiki/Top-level_domain) in the subset of the common crawl downloaded to Amarillo.
+
+**In your report**: Answer the question: What is the top 10 TLDs and how many times to the appear in the dataset?
+
+See `/data1/ECS201C/common-crawl` for the common crawl dataset.
+
+The file `/data1/ECS201C/common-crawl/input.txt` has the list of all of the common crawl files.
+Also see `split.py` if you want to see how the larger files were split up.
+In HDFS, the files are at `hdfs:///common-crawl/`.
+Thus, whether you're using HDFS or native python, you should use different prefixes.
+
+### Average content length per TLD
+
+Extend the above map reduce job (likely with another step) to find the average content length for each TLD.
+
+**In your report**: Answer the question: What is the top 10 TLDs by average content length, and what are these averages?
+
+### Performance comparison
+
+`mrjob` allows you to run your map reduce job in a [variety of ways](https://pythonhosted.org/mrjob/guides/runners.html).
+
+You can use `-r inline` to run a single python process, `-r local` to run multiple python processes (and use `--num-cores` to set the number of cores), and `-r hadoop` to run the local hadoop cluster.
+Finally, if I can get it set up in time, you can use Amazon's Elastic Map Reduce (EMR) to run on multiple systems with `-r emr`.
+I'll post on teams if I can get that working.
+
+**For your report** answer the following
+- What is the speedup for 2, 4, 8, 16, 24, 48, 96 threads using just Python
+- What is the speedup for 2, 4, 8, 16, 24, 48, 96 threads using hadoop
+
+For each graph, explain *why* you are seeing the pattern you're seeing.
