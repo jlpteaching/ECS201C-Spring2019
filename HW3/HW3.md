@@ -88,12 +88,12 @@ Extend the above map reduce job (likely with another step) to find the average c
 
 `mrjob` allows you to run your map reduce job in a [variety of ways](https://pythonhosted.org/mrjob/guides/runners.html).
 
-You can use `-r inline` to run a single python process, `-r local` to run multiple python processes (and use `--num-cores` to set the number of cores), and `-r hadoop` to run the local hadoop cluster.
+You can use `-r inline` to run a single python process, `-r local` to run multiple python processes (and use `--num-cores` to set the number of cores), ~~and `-r hadoop` to run the local hadoop cluster~~.
 Finally, if I can get it set up in time, you can use Amazon's Elastic Map Reduce (EMR) to run on multiple systems with `-r emr`.
 I'll post on teams if I can get that working.
 
 **For your report** answer the following
 - What is the speedup for 2, 4, 8, 16, 24, 48, 96 threads using just Python
-- What is the speedup for 2, 4, 8, 16, 24, 48, 96 threads using hadoop
+- ~~What is the speedup for 2, 4, 8, 16, 24, 48, 96 threads using hadoop~~
 
 For each graph, explain *why* you are seeing the pattern you're seeing.
