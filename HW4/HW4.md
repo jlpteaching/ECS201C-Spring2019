@@ -46,37 +46,51 @@ You can use an application called computeprof provided with CUDA to profile your
 Another option is to use one of the new profling tools available with CUDA called Nsight Compute CLI (command line tool) and Nsight Compute (UI). You can run it using "/usr/local/cuda-10.0/NsightCompute-1.0/nv-nsight-cu" on Crystal.
 
 
-## Task 1: Porting the CPU algorithm
+## Task 1: Write an OpenACC version of Ocean.
+[OpenACC](https://www.openacc.org/) is another programming standard for parallel computing. You are supposed to make use of OpenACC compiler directives to write a version of this algorithm that can then be offloaded to an accelerator (GPU in this case).
+
+**NOTE:** This should be very easy. You can simply take the OMP version of the code given and change the pragma.
+  
+  - Question a) How does this version compare in performance compared to the OMP version for same input sizes?
+  - Question b) How will you compare both versions in terms of programmer effort?
+
+## Task 2: Porting the CPU algorithm
 There is a baseline implementation of the ocean_kernel in the template files. It is available in cuda_ocean_kernels.cu after #ifdef VERSION1. Although considerably more verbose, this is a mostly literal translation of the algorithm in omp_ocean.cpp with OpenMP static partitioning. Each thread gets a chunk of locations within the red/black ocean grid and updates those locations. Study this code and be sure to understand how it works.
+
+**NOTE:** This should be very easy. We've already written the code for you!
 
   - Question a) Describe memory divergence and why it leads to poorly performing code in the SIMT model.
   - Question b) Describe the memory divergence behavior of VERSION1 of ocean_kernel.
-  - Question c) Vary the block size / grid size. What is the optimal block / grid size for this implementation of ocean? What     is the speedup over 1 block and 1 thread ("single threaded")? Run with an input of 16384 16384 1000.
+  - Question c) Vary the block size / grid size. What is the optimal block / grid size for this implementation of ocean? What is the speedup over 1 block and 1 thread ("single threaded")? Run with an input of 16384 16384 1000.
   - Question d) What is the speedup over the single threaded CPU version? Run with an input of 16384 16384 1000.
   
- ## Task 2: Reduce memory divergence (Convert algorithm to "SIMD")
+ 
+ ## Task 3: Reduce memory divergence (Convert algorithm to "SIMD")
 Implement VERSION2 of ocean_kernel. This version of the kernel will take a step towards reducing the memory divergence. Instead of giving each thread a chunk of the array to work on, re-write the algorithm so that the threads in each block work on adjacent elements (i.e. for a red iteration, thread 0 will work on element 0, thread 1 will work on element 2, thread 3 will work on element 6, etc).
+
+**NOTE:** This should also be very easy. If you are finding this part is taking >30 minutes to code, ask for help :).
 
   - Question a) Describe where memory divergence still exists in this implementation of ocean.  
   - Question b) Vary the block size / grid size. What is the optimal block / grid size for this implementation of ocean?
   - Question c) How does this version compare to VERSION1? Run with the optimal block sizes for each respectively and an   input of 16384 16384 1000.
   
- ## Task 3: Further reduce memory divergence (Modify data structure to be GPU-centric).
+ ## Task 4: Further reduce memory divergence (Modify data structure to be GPU-centric).
 Implement VERSION3 of ocean_kernel. Instead of using one flat array to represent the ocean grid, split it into two arrays, one for the red cells and one for the black cells. You should start by writing two other kernels which will split the grid object into red_grid and black_grid and take red/black_grid and put them back into the grid object.
+
 Feel free to add any other optimizations to this implementation. Just describe them in your write-up.
+One suggested optimization: Implement tiling in your thread blocks.
+Instead of assigning a subset of a row to each thread block, assign a 2D tile of cells.
+You may even be able to use scratchpad memory (`__shared_memory__` or something like that) to further speed up the computation.
+Can you combine the splitting of the arrays and the use of scratchpad? Hmm...
+
+**NOTE:** This is the part you should spend the most time on! Hopefully, you've spent less than an hour getting to this point.
 
   - Question a) How does the performance of this version compare to VERSION2? Is this what you expected?
   - Question b) Time each kernel and the memory copies separately (ocean_kernel, and (un)split_array_kernel). Which actions are taking the most execution time? How does this affect the overall execution time of the algorithm? (computeprof does a good job summarizing this data)
   - Question c) Vary the block size / grid size. What is the optimal block / grid size for this implementation of ocean? Does it change when you change the problem size?
   - Question d) Describe branch divergence and why it leads to poorly performing code in the SIMT model. Does your code exhibit any branch divergence? If so, where?
   - Question e) Run either your OpenMP version of ocean or the one in the template files. How does the performance of the CPU version of Ocean compare to the GPU version, better or worse? Why do you think this is? Run with different problem sizes.
-  - Question f) What do you think of CUDA? SIMT programming in general?
-
-## Task 4: Write an OpenACC version of Ocean.
-[OpenACC](https://www.openacc.org/) is another programming standard for parallel computing. You are supposed to make use of OpenACC compiler directives to write a version of this algorithm that can then be offloaded to an accelerator (GPU in this case).
-  
-  - Question a) How does this version compare in performance compared to the CUDA version for same input sizes?
-  - Question b) How will you compare both versions in terms of programmer effort?
+  - Question f) What do you think of CUDA? SIMT programming in general? How does OMP, OpenACC, and CUDA programming compare?
 
 ## What to Hand In:
 
