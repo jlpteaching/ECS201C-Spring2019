@@ -15,8 +15,10 @@ The purpose of this assignment is to familiarize yourself with GPGPU computing p
 
 You are supposed to use "Crystal" to get your code working for the final speedups and other results.
 Your accounts will be setup on the machine.
-You can ssh with your kerberos user ID and password.
+You can ssh with your kerberos user ID.
 (I.e., ssh [username]@crystal.cs.ucdavis.edu).
+However, your password is different.
+See the teams channel for details.
 Let Ayaz know via email or teams if you do not have an account.
 
 **Important: When using crystal, be sure to consider other users.**
