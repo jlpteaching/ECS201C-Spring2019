@@ -63,7 +63,7 @@ There is a baseline implementation of the ocean_kernel in the template files. It
 
   - Question a) Describe memory divergence and why it leads to poorly performing code in the SIMT model.
   - Question b) Describe the memory divergence behavior of VERSION1 of ocean_kernel.
-  - Question c) Vary the block size / grid size. What is the optimal block / grid size for this implementation of ocean? What is the speedup over 1 block and 1 thread ("single threaded")? Run with an input of 16384 16384 1000.
+  - Question c) Vary the block size / grid size. What is the optimal block / grid size for this implementation of ocean? Run with an input of 16384 16384 1000. Does it make sense to compare the performance to a single thread on the GPU (1 block 1 thread)? Why or why not?
   - Question d) What is the speedup over the single threaded CPU version? Run with an input of 16384 16384 1000.
   
  
