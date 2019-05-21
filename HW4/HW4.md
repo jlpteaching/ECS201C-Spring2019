@@ -51,8 +51,9 @@ Another option is to use one of the new profling tools available with CUDA calle
 ## Task 1: Write an OpenACC version of Ocean.
 [OpenACC](https://www.openacc.org/) is another programming standard for parallel computing. You are supposed to make use of OpenACC compiler directives to write a version of this algorithm that can then be offloaded to an accelerator (GPU in this case).
 
-**NOTE:** This should be very easy. You can simply take the OMP version of the code given and change the pragma.
-  
+**NOTE:** In order to do this task, you can take the OMP version of the code given and change the pragma. You will also have to take care of the data movement between the host and the GPU. For relevant API calls, see [this](https://www.nvidia.com/docs/IO/116711/OpenACC-API.pdf). One possibility is to use acc_malloc to allocate all of the grid on the GPU. To compile a basic version of the OpenACC progam, make sure to use these flags "-fopenacc -foffload=nvptx-none" with the compiler.
+
+
   - Question a) How does this version compare in performance compared to the OMP version for same input sizes?
   - Question b) How will you compare both versions in terms of programmer effort?
 
