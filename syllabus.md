@@ -91,6 +91,8 @@ Fill this in.
 
 ### Grading Breakdown
 
+FOR NEXT TIME: Have a signficant part of the grade be attendence. If we aren't going to have tests, you must attend.
+
 | Category                | Percentage |
 |-------------------------|------------|
 | Participation           | 10%        |
