@@ -99,3 +99,14 @@ Note: Read the Synthesis lecture before doing the review. It will help :).
 ## 5/23 Lecture 14: More Accelerators
 
 **Review**: [In-Datacenter Performance Analysis of a Tensor Processing Unit](https://dl.acm.org/citation.cfm?id=3080246). Norman P. Jouppi, Cliff Young, Nishant Patil, David Patterson, et al.  ISCA 2017.
+
+## 5/30 Lecture 15: Quantum computing
+**Review**: [Full-Stack, Real-System Quantum Computer Studies: Architectural Comparisons and Design Insights](https://arxiv.org/abs/1905.11349). Prakash Murali, Norbert Matthias Linke, Margaret Martonosi, Ali Javadi Abhari, Nhung Hong Nguyen, Cinthia Huerta Alderete
+
+(Note: This paper will be published soon in ISCA 2019.)
+
+## 6/4 Lecture 16: Persistent memory
+**Review**: [Memory Persistency](https://dl.acm.org/citation.cfm?id=2665712). Steven Pelley, Peter M. Chen, Thomas F. Wenisch.
+
+## 6/6: Lecture 17: FPGAs
+**Review**: Coming soon
