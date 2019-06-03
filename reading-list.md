@@ -108,5 +108,5 @@ Note: Read the Synthesis lecture before doing the review. It will help :).
 ## 6/4 Lecture 16: Persistent memory
 **Review**: [Memory Persistency](https://dl.acm.org/citation.cfm?id=2665712). Steven Pelley, Peter M. Chen, Thomas F. Wenisch.
 
-## 6/6: Lecture 17: FPGAs
-**Review**: Coming soon
+## 6/6: Lecture 17: In-memory computing
+**Review**: [A case for intelligent RAM](https://ieeexplore.ieee.org/document/592312). David Patterson, Thomas Anderson, Neal Cardwell, Richard Fromm, Kimberly Keeton, Christoforos Kozyrakis, Randi Thomas, and Katherine Yelick.
