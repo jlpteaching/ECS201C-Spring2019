@@ -55,18 +55,20 @@ Progress reports should include a revised version of the proposal plus one page 
 Concentrate on describing sub-tasks completed, rather than the tasks started.
 There will be meetings during class time for this report like the proposal.
 
-## Presentation (TBD)
+## Presentation (due 6/7)
 
 **The presentation will be 30% of your project grade**
 
-We will divide up the last few lectures into 15 minute conference-style talks with 5 minutes for questions.
-Depending on class size, some talk may be scheduled at alternative times.
+We will have the class conference from 11:30am-2pm in Kemper 3083.
+
 All group members should deliver part of the talk.
+Each group will have a 15 minute slot to deliver their talk and take questions.
+This will give you 12 minutes for the talk + 3 minutes for questions.
 The talk should give highlights of the final report, including the problem, motivation, results, conclusions, and possible future work. Time limits will be enforced to let everyone present.
 Please, practice your talk to make it better and see how long it is.
 Have a plan for what slides to skip if you get behind.
 
-More info soon.
+[This rubric](rubric.pdf) will be used to grade your oral presentations.
 
 ## Final report due (6/13)
 
