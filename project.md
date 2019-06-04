@@ -77,7 +77,10 @@ Have a plan for what slides to skip if you get behind.
 The format of this report is the same as the research papers you have read in class.
 There are no specific page requirements.
 
-More info soon.
+Use the [ACM template](https://www.acm.org/publications/proceedings-template) for your paper. 
+Please use the sigconf version (e.g., `\documentclass[sigconf]{acmart}` if you're using LaTeX).
+
+Your paper will be graded both on presentation (e.g., logical flow and data presentation) as well as whether you made progress towards the goals laid out in your proposal and mid project report.
 
 # Project ideas
 
