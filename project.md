@@ -76,11 +76,22 @@ Have a plan for what slides to skip if you get behind.
 
 The format of this report is the same as the research papers you have read in class.
 There are no specific page requirements.
+I expect most projects will be in the 4-6 page range when using the provided template.
 
 Use the [ACM template](https://www.acm.org/publications/proceedings-template) for your paper. 
 Please use the sigconf version (e.g., `\documentclass[sigconf]{acmart}` if you're using LaTeX).
 
 Your paper will be graded both on presentation (e.g., logical flow and data presentation) as well as whether you made progress towards the goals laid out in your proposal and mid project report.
+
+Below is a solid starting point for an outline of a good paper. 
+Most people in the class are "answering questions". 
+However, I also included the outline for a more engineering-based paper (like many of the ones we read in class).
+
+- The introduction should put your work in context of today's technology. What is the problem you're solving or question you're asking? Why does it matter? What is the solution you're proposing or the answer to the question?
+- You should have a complete covering of the most relevant related work (not necessarily all of the related work, but the most closely related should be covered in detail.
+- Explain the methodology you used to answer the question or explain the solution to the problem you're solving in detail. Someone reading the paper should be able to recreate (reproduce) your work.
+- Show data which shows the efficacy of your solution, or gives the answer to your question. This should be detailed, likely graph-based, and you should have clear descriptions of the data.
+- Finally, you should discuss/conclude the paper by recapping the main points.
 
 # Project ideas
 
