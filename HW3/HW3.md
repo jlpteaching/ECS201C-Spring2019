@@ -96,3 +96,9 @@ I'll post on teams if I can get that working.
 **For your report** answer the following
 - What is the speedup for 2, 4, 8, 16, 24, 48, 96 threads using Python
 - How does programming in MapReduce compare to OpenMP? What about to using C++ threads directly?
+
+FOR NEXT TIME: Be more specific about these questions.
+Most people only answered with a single paragraph.
+I'd like to have see more.
+
+I should be specific about making a graph and explaining it like you would in the results section of a paper.
