@@ -67,6 +67,7 @@ There is a baseline implementation of the ocean_kernel in the template files. It
   - Question c) Vary the block size / grid size. What is the optimal block / grid size for this implementation of ocean? Run with an input of 16384 16384 1000. Does it make sense to compare the performance to a single thread on the GPU (1 block 1 thread)? Why or why not?
   - Question d) What is the speedup over the single threaded CPU version? Run with an input of 16384 16384 1000.
   
+  **FOR NEXT TIME:** Make sure to specify reasonable block sizes. Some students did not use big enough block sizes.
  
  ## Task 3: Reduce memory divergence (Convert algorithm to "SIMD")
 Implement VERSION2 of ocean_kernel. This version of the kernel will take a step towards reducing the memory divergence. Instead of giving each thread a chunk of the array to work on, re-write the algorithm so that the threads in each block work on adjacent elements (i.e. for a red iteration, thread 0 will work on element 0, thread 1 will work on element 2, thread 3 will work on element 6, etc).
